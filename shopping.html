@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"
+    />
+    <script src="js/shopping.js" defer></script>
+    <link rel="stylesheet" href="/css/shopping.css">
+    <title>shopping</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-warning" href="index.html">Main page</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-3">
+                <input
+                 id="category-search-input" 
+                 type="search"
+                 class="form-control"
+                 plaseholder="Search"
+                /><br />
+                <div id="computer-category-div"></div>
+            </div>
+            <div class="col-sm-9">
+                <div id="computers-loading">
+                    <div class="spinner-border"></div>
+                </div>
+                <div id="computers-div"></div>
+                <div id="computers-loading-next">
+                   <div class="spinner-border"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="open-basket-button"
+      onclick="onOpenBasket()"
+    >
+     Basket <span id="basket-computer-count" class="badge badge-light">0</span>
+    </button>
+
+    <div id="computer-details-modal">
+        <div id="computer-details-modal-content">
+            <h2 style="text-align: center;">Detail information about computer</h2>
+             <div id="computer-modal-image-container"></div>        
+             <div id="computer-modal-name"></div>
+             <div id="computer-modal-description">Description</div>
+             <div id="computer-modal-price">Price</div>
+             <div id="computer-modal-phone">Phone</div>
+             <div id="computer-modal-new">New</div>
+             <div id="computer-modal-ram">RAM</div>
+             <div id="computer-modal-cpu">CPU</div>
+             <div id="computer-modal-drive">Drive</div>
+             <div id="computer-modal-drive-type">Drive type</div>
+             <div id="computer-modal-os">OS</div>
+             <div id="computer-modal-video-card">Video card</div>
+        </div>
+    </div>
+
+    <div id="basket-modal">
+        <div id="basket-modal-content" style="overflow-x: auto">
+            <div style="overflow: auto; ">
+                <span id="basket-modal-close-button">x</span>
+            </div>
+            <h1 style="text-align: center;">Basket</h1>
+            <table class="basket-table table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+
+                        <th>Computer model</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="basket-computers-table-body"></tbody>
+            </table>
+
+            <div style="overflow: auto">
+                <span id="basket-total-price"
+                >Total price:
+                 <span id="basket-total-price-content">0</span> AZN</span
+                 >
+                 <button
+                 onclick="clearBasket()"
+                 id="clear-basket-button"
+                 class="btn btn-danger"
+                 >
+                 Clear basket
+                 </button>
+                 <button
+                   onclick="confirmOrder()"
+                   id="confirm-order-button"
+                   class="btn btn-success"
+                 >
+                   Confirm order
+                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirm-order-modal">
+        <div id="confirm-order-modal-button">
+            <div style="overflow: auto; margin-bottom: 5px;">
+                <span id="confirm-order-modal-close-button">x</span>
+            </div>
+            <h1 style="text-align: center;">Write your contacts</h1>
+            <div id="confirm-order-modal-form-div">
+                <form 
+                  id="confirm-order-modal-form"
+                  action=""
+                  class="was-validated"
+                  onsubmit="onOrderSubmit(event)"
+                >
+                    <div class="form-group">
+                        <label for="customer-name">Name:</label>
+                        <input 
+                         type="text"
+                         class="form-control"
+                         id="customer-name"
+                         placeholder="Write your name"
+                         name="customer-name"
+                         required
+                         minlength="2"
+                         maxlength="30"
+                        />
+                        <div class="valid-feedback">Correct</div>
+                        <div class="invalid-feedback">
+                            Don't leave this area empty. Min 2, Max 30 symbyols
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-address">Address:</label>
+                        <input
+                         type="text"
+                         class="form-control"
+                         id="customer-address"
+                         placeholder="Write your address"
+                         required
+                         minlength="300"
+                        />
+                        <div>Correct</div>
+                        <div>Don't leave this empty</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-phone">Phone:</label>
+                        <input 
+                         type="text"
+                         class="form-control"
+                         id="customer-phone"
+                         placeholder="Write your phone number"
+                         name="customer-phone"
+                         required
+                         pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+                        />
+                        <div class="valid-feedback">Correct</div>
+                        <div class="invalid-feedback">
+                            Phone is wroten in wrong format. Needs to be (000-000-0000) format
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-email">Email:</label>
+                        <input 
+                         type="text"
+                         class="form-control"
+                         id="customer-email"
+                         placeholder="Write your email"
+                         name="customer-email"
+                         required
+                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        />
+                        <div class="valid-feedback">Correct</div>
+                        <div class="invalid-feedback">
+                            Email is wroten in wrong pattern
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customer-order-note">Note:</label>
+                        <input 
+                         type="text"
+                         class="form-control"
+                         id="customer-order-note"
+                         placeholder="Can you add a note"
+                         name="customer-order-note"
+                         maxlength="300"
+                        />
+                        <div class="valid-feedback">Correct</div>
+                        <div class="invalid-feedback">Don't leave this field emty</div>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input
+                             class="form-check-input"
+                             type="checkbox"
+                             name="confirmation"
+                             required
+                            />
+                            Confirm every data
+                            <div class="valid-feedback">You confirmed</div>
+                            <div class="invalid-feedback0">You need to confirm</div>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            </div>
+        </div>
+    </div> 
+
+    <div id="fixed-elements"></div>
+
+    <input 
+     type="text"
+     class="form-control"
+     oninput="onSearchInput(this)"
+     onchange="onSearchChange(this)"
+     onkeydown="onSearchKeyDown(event)"
+     id="computer-search-input"
+     placeholder="Search"
+    />
+</body>
+</html>

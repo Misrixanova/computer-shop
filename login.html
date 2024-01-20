@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/login.js" defer></script>
+  <link rel="stylesheet" href="/css/login.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <hr />
+                <a class="btn btn-warning" href="index.html">Main page</a>
+                <hr />
+                <h2>Login in account</h2>
+                <hr />
+                <div
+                 class="alert alert-danger"
+                 id="login-error-alert"
+                 style="display: none"
+                 ></div>
+
+                 <div
+                  class="alert alert-success"
+                  id="login-success-alert"
+                  style="display: none"
+                 ></div>
+
+                 <form action="" class="was-validated" onsubmit="onLogin(event)">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" />
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" />
+                    </div><br>
+
+                    <button type="submit" class="btn btn-success">
+                        Login 
+                    </button>
+                    <hr/>
+                    <span>You don't have account?</span>
+                    <a href="create-account.html" class="btn btn-primary"
+                    >Create account</a
+                    >
+                </form>
+            </div>
+            
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/logi.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main"> 
+        <a href="./index.html" class="link">X</a>
+        <h1>Computer Shop</h1> 
+        <h3>Welcome back</h3>
+        <form onsubmit="onLogin(event)"> 
+            <label for="first"> 
+                  Username: 
+              </label> 
+            <input type="text" 
+                   id="first"
+                   name="first" 
+                   placeholder="Enter your Username" required> 
+  
+            <label for="password"> 
+                  Password: 
+              </label> 
+            <input type="password"
+                   id="password" 
+                   name="password" 
+                   placeholder="Enter your Password" required> 
+  
+            <div class="wrap"> 
+                <button id="btn" type="submit"
+                       > 
+                    Submit 
+                </button> 
+            </div> 
+        <p>Not registered?  
+              <a href="./create-accoun.html" 
+               style="text-decoration: none;"> 
+                Create an account 
+            </a> 
+        </p> 
+    </form> 
+    </div> 
+</body>
+</html>

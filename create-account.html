@@ -1,0 +1,160 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/create-account.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <hr />
+                <a href="index.html" class="btn btn-warning">Main page</a>
+                <hr />
+                <h2>Create account</h2>
+                <hr />
+
+                <div
+                 class="alert alert-danger"
+                 id="user-exists-error-alert"
+                 style="display: none;"
+                ></div>
+
+                <div
+                 class="alert alert-success"
+                 id="user-created-alert"
+                 style="display: none;"
+                ></div>
+
+                <form 
+                 action=""
+                 class="was-validated"
+                 onsubmit="onCreateAccount(event)"
+                >
+                <div class="form-group">
+                    <label for="user-full-name">Name:</label>
+                    <input 
+                     type="text"
+                     class="form-control"
+                     id="user-full-name"
+                     required
+                     minlength="2"
+                     maxlength="30"
+                     />
+                     <div class="valid-feedback">True</div>
+                     <div class="invalid-feedback">
+                        Don't leave this area empty. Min 2, max 30 simboyls
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-phone">Phone:</label>
+                    <input 
+                     type="text"
+                     class="form-control"
+                     id="user-phone"
+                     required
+                     pattern="((\(\d{3}\) ?) |(\d{3}-))?\d{3}-\d{4}"
+                     />
+                     <div class="valid-feedback">True</div>
+                    <div class="invalid-feedback">
+                        Number is wroten in false format. Needs to be (000-000-0000) in this format
+
+                     </div>         
+                </div>
+
+                <div class="form-group">
+                    <label for="username">User name:</label>
+                    <input 
+                     type="text"
+                     class="form-control"
+                     id="username"
+                     required
+                     minlength="2"
+                     maxlength="30"
+                    />
+                    <div class="valid-feedback">True</div>
+                    <div class="invalid-feedback">
+                        Don't leave this area empty. Min 2, max 30 simboyls
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input 
+                     type="password"
+                     class="form-control"
+                     id="password"
+                     required
+                     minlength="2"
+                     maxlength="30"
+                     />
+                     <div class="valid-feedback">True</div>
+                     <div class="invalid-feedback">
+                        Don't leave this area empty. Min 2, max 30 simboyls
+                     </div>
+                </div>
+                
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/create-accoun.css">
+    <title>Document</title>
+</head>
+<body>
+<br><br><br><br><br>
+<div class="cont">
+  <div class="form sign-in">
+    <a href="./index.html" class="linky">X</a>
+    <h2 class="text">Create Computer shop account
+    </h2>
+    <form onsubmit="onCreateAccount(event)">
+      <label for="email">
+        <span style="color: #4CAF50;" required>email:</span>
+        <input type="email" />
+      </label>
+    <label for="emai;">
+        <span style="color: #4CAF50;" required>Username:</span>
+        <input type="email" />
+      </label>
+    <label for="email">
+        <span style="color: #265728;" requierd>Phone:</span>
+        <input type="email" />
+      </label>
+    <label>
+      <span for="password" style="color: #265728;"required >Password:</span>
+      <input type="password" />
+    </label>
+    <button type="button" class="submit">Sign Up</button>
+    <p align="center" >Have account? <a href="./logi.html" style="text-decoration: none;">Login</a></p>
+  </form>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+    </div>
+  </div>
+</div>
+<script src="./js/create-account.js"></script>
+</body>
+</html>
