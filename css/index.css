@@ -1,9 +1,6 @@
-/* .carousel-inner img{
-    width: 100%;
-    height: 100%;
-} */
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Phudu:wght@300&family=Playfair+Display:ital@1&family=Rajdhani&display=swap');
-.c-item {
+
+/* @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@300&family=Phudu:wght@300&family=Playfair+Display:ital@1&family=Rajdhani&display=swap');*/
+.c-item { 
   height: 480px;
 }
   
@@ -73,7 +70,7 @@ body {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
-#my-orders-button {
+#my-login-button {
     align-self: center;
     background-color: #fff;
     background-image: none;
@@ -104,12 +101,12 @@ body {
     touch-action: manipulation;
 }
 
-#my-orders-button:hover {
+#my-login-button:hover {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
     transform: translate3d(0, 2px, 0);
 }
 
-#my-orders-button:focus {
+#my-login-button:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 } 
 
@@ -263,4 +260,20 @@ body {
 
 p {
   font-size: 18px;
+}
+
+.computers {
+  padding: 2rem 7rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.display-1 fw-bolder text-capitalize {
+  text-decoration: none;
+  color: #fff;
+}
+.display-1 fw-bolder text-capitalize:hover {
+  text-decoration: none;
+  color: #dddddd;
 }

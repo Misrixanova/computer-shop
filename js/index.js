@@ -326,20 +326,20 @@ orders.push(order2);
 orders.push(order3);
 
 
-var ordersString = localStorage.getItem("orders");
+// var ordersString = localStorage.getItem("orders");
 
-if (ordersString == null) {
-    localStorage.setItem("orders", JSON.stringify(orders));
-} else {
-    orders = JSON.parse(ordersString);
-}
+// if (ordersString == null) {
+//     localStorage.setItem("orders", JSON.stringify(orders));
+// } else {
+//     orders = JSON.parse(ordersString);
+// }
 
 
 
-var myOrdersButton = document.getElementById('my-orders-button');
+var myOrdersButton = document.getElementById('my-login-button');
 
 myOrdersButton.addEventListener('click', function () {
-    window.location.href = "orders.html";
+    window.location.href = "login.html";
 });
 
 
